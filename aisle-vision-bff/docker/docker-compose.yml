@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:16
+    container_name: aisle_vision
+    restart: always
+    environment:
+      POSTGRES_USER: mariloise
+      POSTGRES_PASSWORD: aninha_mari_luks
+      POSTGRES_DB: costumers_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:

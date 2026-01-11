@@ -1,0 +1,54 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+enum NegotiationType {
+  EXCLUSIVO
+  NAO_EXCLUSIVO
+  ACORDO
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Contact {
+  id            String    @id @default(uuid())
+
+  code          String    @unique
+  name          String
+
+  address       String
+  neighborhood  String
+  city          String
+  state         String
+  cep           String
+
+  negotiation   NegotiationType
+
+  phone         String
+  email         String
+  notes         String?
+
+  collections   Collection[]
+
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  @@index([state, city, neighborhood])
+  @@index([negotiation])
+
+}
+
+model Collection {
+  id            String    @id @default(uuid())
+  name          String    @unique
+  contacts      Contact[]
+}
