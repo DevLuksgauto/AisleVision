@@ -1,10 +1,10 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import { PrismaService } from 'src/prisma/prisma.service';
+import { PrismaService } from '@/prisma/prisma.service';
 import { Contact } from '@prisma/client';
 import { CreateContactDto } from './dto/create-contact.dto';
 import { UpdateContactDto } from './dto/update-contact.dto';
 import { FilterContactsDto } from './dto/filter-contacts.dto';
-import { PaginationDto } from 'src/common/dto/paginaton.dto';
+import { PaginationDto } from '@/common/dto/paginaton.dto';
 
 @Injectable()
 export class ContactsService {
