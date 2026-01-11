@@ -29,6 +29,18 @@ export default tseslint.config(
       '@typescript-eslint/no-explicit-any': 'off',
       '@typescript-eslint/no-floating-promises': 'warn',
       '@typescript-eslint/no-unsafe-argument': 'warn',
+      // Disallow importing from 'src/*' so developers use '@/...' alias instead
+      'no-restricted-imports': [
+        'error',
+        {
+          patterns: [
+            {
+              group: ['src/*'],
+              message: "Use '@/...' imports (configured in tsconfig paths) instead of 'src/...'.",
+            },
+          ],
+        },
+      ],
       'prettier/prettier': [
         'error',
         {

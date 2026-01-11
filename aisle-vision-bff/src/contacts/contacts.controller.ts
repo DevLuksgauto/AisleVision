@@ -13,7 +13,7 @@ import { ContactsService } from './contacts.service';
 import { CreateContactDto } from './dto/create-contact.dto';
 import { UpdateContactDto } from './dto/update-contact.dto';
 import { FilterContactsDto } from './dto/filter-contacts.dto';
-import { PaginationDto } from 'src/common/dto/paginaton.dto';
+import { PaginationDto } from '@/common/dto/paginaton.dto';
 import { Contact } from '@prisma/client';
 
 @Controller('contacts')
