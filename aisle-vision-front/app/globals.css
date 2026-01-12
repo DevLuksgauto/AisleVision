@@ -1,0 +1,32 @@
+/* Minimal global styles for a fresh Next app */
+/* Project reset: keep this file intentionally minimal */
+html,
+body,
+#__next {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: #fff;
+  color: #000;
+}
+
+/* Use fonts loaded by next/font via CSS variables */
+body {
+  margin: 0;
+  font-family: var(--font-inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial);
+  background: #fff;
+  color: #000;
+}
+
+/* Headings use Playfair Display */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-playfair, "Playfair Display", Georgia, "Times New Roman", serif);
+}
