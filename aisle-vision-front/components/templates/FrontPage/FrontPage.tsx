@@ -4,7 +4,13 @@ import React from 'react'
 
 function FrontPage() {
   return (
-    <Box>
+    <Box
+      minH="100vh"
+      display="flex"
+      alignItems="center"
+      justifyContent="center"
+      bg="white"
+    >
       <FrontPageCard/>
     </Box>
   )
